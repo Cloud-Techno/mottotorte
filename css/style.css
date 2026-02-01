@@ -1,15 +1,16 @@
 /* Base Reset & Variables */
 :root {
-    --primary-color: #D4AF37;
-    /* Gold */
-    --secondary-color: #2C2C2C;
-    /* Dark Charcoal */
-    --bg-color: #FDFBF7;
-    /* Cream/Vanilla */
+    --primary-color: #512DA8;
+    /* Deep Royal Purple */
+    --secondary-color: #1A1A1A;
+    /* Almost Black */
+    --bg-color: #FDFBFF;
+    /* Soft Lavender White */
     --white: #FFFFFF;
-    --light-gray: #f4f4f4;
-    --text-color: #4a4a4a;
-    --accent-pink: #e8d5d5;
+    --light-gray: #f8f9fa;
+    --text-color: #333333;
+    --accent-pink: #E1D7F0;
+    /* Pale Lavender */
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Outfit', sans-serif;
@@ -83,7 +84,7 @@ img {
 }
 
 .bg-cream {
-    background-color: #fcf8f3;
+    background-color: #F4F1FA;
 }
 
 /* Buttons */
@@ -227,6 +228,8 @@ img {
     height: 100%;
     background-size: cover;
     background-position: center;
+    background-color: var(--primary-color);
+    /* Fallback to prevent white flash */
     z-index: -2;
 }
 
@@ -521,5 +524,20 @@ img {
         flex-direction: column;
         max-width: 300px;
         margin: 0 auto;
+    }
+
+    /* Reduce Animations on Mobile */
+    .animate-up {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .gallery-item img {
+        transition: none !important;
+    }
+
+    .gallery-item:hover img {
+        transform: none !important;
     }
 }
