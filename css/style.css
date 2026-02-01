@@ -1,16 +1,16 @@
 /* Base Reset & Variables */
 :root {
-    --primary-color: #512DA8;
-    /* Deep Royal Purple */
-    --secondary-color: #1A1A1A;
-    /* Almost Black */
-    --bg-color: #FDFBFF;
-    /* Soft Lavender White */
+    --primary-color: #b27c7c;
+    /* Dusty Rose */
+    --secondary-color: #2C2C2C;
+    /* Dark Charcoal */
+    --bg-color: #FCF9F9;
+    /* Soft Rose White */
     --white: #FFFFFF;
-    --light-gray: #f8f9fa;
-    --text-color: #333333;
-    --accent-pink: #E1D7F0;
-    /* Pale Lavender */
+    --light-gray: #f4f4f4;
+    --text-color: #4a4a4a;
+    --accent-pink: #F2E6E6;
+    /* Pale Rose */
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Outfit', sans-serif;
@@ -84,7 +84,7 @@ img {
 }
 
 .bg-cream {
-    background-color: #F4F1FA;
+    background-color: #FAF5F5;
 }
 
 /* Buttons */
