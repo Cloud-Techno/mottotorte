@@ -17,8 +17,10 @@
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">Motto<span class="logo-accent">.</span></a>
-            <button class="mobile-nav-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="logo">Motto<span class="logo-accent">cake</span></a>
+            <button class="mobile-nav-toggle" aria-label="Menü öffnen">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
@@ -27,8 +29,8 @@
                     <li><a href="kontakt.html" class="active">Kontakt</a></li>
                 </ul>
             </nav>
-            <a href="https://wa.me/49123456789" class="header-whatsapp-btn" target="_blank"><i
-                    class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://wa.me/41772021758" class="header-whatsapp-btn" target="_blank"
+                aria-label="Kontakt via WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
     </header>
 
@@ -41,14 +43,18 @@
     </section>
 
     <!-- Contact & Order Section -->
-    <section class="contact-section section-padding">
+    <section class="order-section section-padding bg-cream">
         <div class="container">
             <div class="contact-grid">
 
                 <!-- Order Form -->
                 <div class="contact-form-container">
                     <h2 class="mb-2">Deine Anfrage</h2>
-                    <form action="thanks.html" method="GET" class="contact-form">
+                    <form action="https://formspree.io/f/info@mottocake.ch" method="POST" class="contact-form">
+                        <!-- Redirect to thanks page -->
+                        <input type="hidden" name="_next" value="https://mottocake.ch/thanks.html">
+                        <!-- Custom Subject -->
+                        <input type="hidden" name="_subject" value="Neue Tortenanfrage (Kontaktseite) von Mottocake.ch">
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required placeholder="Dein Name">
@@ -149,11 +155,12 @@
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-col">
-                <h3>Motto<span class="logo-accent">.</span></h3>
+                <h3>Motto<span class="logo-accent">cake</span></h3>
                 <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://wa.me/49123456789"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/41772021758" class="whatsapp" aria-label="WhatsApp" target="_blank"><i
+                            class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -175,121 +182,21 @@
             </div>
             <div class="footer-col">
                 <h4>Kontakt</h4>
-                <p>Musterstraße 12, 12345 Musterstadt</p>
-                <p>info@motto-torten.de</p>
-                <p>+49 123 456 789</p>
+                <p><i class="fa-solid fa-location-dot"></i> Stadtbachstrasse 15, 5400 Baden</p>
+                <p><i class="fa-solid fa-envelope"></i> info@mottocake.ch</p>
+                <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/41772021758">+41 77 202 17 58</a></p>
             </div>
         </div>
         <div class="footer-bottom text-center">
-            <p>&copy; 2024 Motto Tortenmanufaktur. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2024 MottoCake Tortenmanufaktur. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/49123456789" class="sticky-whatsapp" target="_blank"><i
+    <a href="https://wa.me/41772021758" class="sticky-whatsapp" target="_blank"><i
             class="fa-brands fa-whatsapp"></i></a>
     <script src="js/script.js" defer></script>
 
-    <style>
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
 
-        @media (max-width: 900px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .contact-form {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        @media (max-width: 600px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: 0.3s;
-        }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-            border-color: var(--primary-color);
-            outline: none;
-        }
-
-        .form-check {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-        }
-
-        .form-check input {
-            width: auto;
-        }
-
-        .map-wrapper {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .info-item i {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            margin-top: 5px;
-        }
-
-        .mb-2 {
-            margin-bottom: 2rem;
-        }
-
-        .w-100 {
-            width: 100%;
-        }
-    </style>
 </body>
 
 </html>
