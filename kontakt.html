@@ -25,6 +25,7 @@
                 <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
                     <li><a href="leistungen.html">Leistungen</a></li>
                     <li><a href="kontakt.html" class="active">Kontakt</a></li>
                 </ul>
@@ -50,11 +51,15 @@
                 <!-- Order Form -->
                 <div class="contact-form-container">
                     <h2 class="mb-2">Deine Anfrage</h2>
-                    <form action="https://formspree.io/f/info@mottocake.ch" method="POST" class="contact-form">
+                    <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data"
+                        class="contact-form">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
                         <!-- Redirect to thanks page -->
-                        <input type="hidden" name="_next" value="https://mottocake.ch/thanks.html">
+                        <input type="hidden" name="redirect" value="https://mottocake.ch/thanks.html">
                         <!-- Custom Subject -->
-                        <input type="hidden" name="_subject" value="Neue Tortenanfrage (Kontaktseite) von Mottocake.ch">
+                        <input type="hidden" name="subject" id="email-subject-contact"
+                            value="Neue Tortenanfrage (Kontaktseite) von Mottocake.ch">
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required placeholder="Dein Name">
@@ -127,21 +132,21 @@
                             <i class="fa-solid fa-location-dot"></i>
                             <div>
                                 <h4>Adresse</h4>
-                                <p>Motto Tortenmanufaktur<br>Musterstraße 12<br>12345 Musterstadt</p>
+                                <p>Mottocake Tortenmanufaktur<br>Stadtbachstrasse 15<br>5400 Baden</p>
                             </div>
                         </div>
                         <div class="info-item">
                             <i class="fa-brands fa-whatsapp"></i>
                             <div>
                                 <h4>WhatsApp & Telefon</h4>
-                                <p><a href="https://wa.me/49123456789">+49 123 456 789</a></p>
+                                <p><a href="https://wa.me/41772021758">+41 77 202 1758</a></p>
                             </div>
                         </div>
                         <div class="info-item">
                             <i class="fa-solid fa-envelope"></i>
                             <div>
                                 <h4>E-Mail</h4>
-                                <p><a href="mailto:info@motto-torten.de">info@motto-torten.de</a></p>
+                                <p><a href="mailto:info@mottocake.ch">info@mottocake.ch</a></p>
                             </div>
                         </div>
                     </div>
@@ -168,6 +173,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
                     <li><a href="leistungen.html">Leistungen & Preise</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>

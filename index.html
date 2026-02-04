@@ -43,6 +43,7 @@
                 <ul class="nav-list">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
                     <li><a href="leistungen.html">Leistungen</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
@@ -73,34 +74,28 @@
     <!-- Regional SEO Section -->
     <section class="seo-section">
         <div class="container">
-            <div class="seo-grid">
-                <div class="seo-text animate-up">
-                    <small>Individuelle Tortenkunst</small>
-                    <h2>Geburtstagstorte bestellen in <span class="logo-accent">Baden</span></h2>
+            <div class="seo-text-only animate-up">
+                <small>Individuelle Tortenkunst</small>
+                <h2>Geburtstagstorte bestellen in <span class="logo-accent">Baden</span></h2>
 
-                    <p>Sie möchten eine <strong>Geburtstagstorte in Baden bestellen</strong>? Bei MottoCake fertigen wir
-                        individuelle, handgemachte Geburtstagstorten nach Ihren Wünschen. Jede Torte wird frisch in
-                        Baden hergestellt und eignet sich perfekt für Geburtstage, Hochzeiten oder besondere Anlässe.
-                    </p>
+                <p>Sie möchten eine <strong>Geburtstagstorte in Baden bestellen</strong>? Bei MottoCake fertigen wir
+                    individuelle, handgemachte Geburtstagstorten nach Ihren Wünschen. Jede Torte wird frisch in
+                    Baden hergestellt und eignet sich perfekt für Geburtstage, Hochzeiten oder besondere Anlässe.
+                </p>
 
-                    <p>Ich bin leidenschaftlicher Tortenkünstler und habe es mir zur Aufgabe
-                        gemacht, deine schönsten Momente zu versüßen.
+                <p>Ich bin leidenschaftlicher Tortenkünstler und habe es mir zur Aufgabe
+                    gemacht, deine schönsten Momente zu versüßen.
 
-                        Ob eine intime Geburtstagsfeier oder eine große Hochzeit – gemeinsam kreieren wir das perfekte
-                        Highlight für dein Event. Sende mir einfach dein Wunschdesign!</p>
+                    Ob eine intime Geburtstagsfeier oder eine große Hochzeit – gemeinsam kreieren wir das perfekte
+                    Highlight für dein Event. Sende mir einfach dein Wunschdesign!</p>
 
-                    <p>Bestellen Sie Ihre Geburtstagstorte einfach über unser Online-Formular oder per WhatsApp.
-                        Abholung direkt in Baden möglich. Jetzt unverbindlich anfragen!</p>
+                <p>Bestellen Sie Ihre Geburtstagstorte einfach über unser Online-Formular oder per WhatsApp.
+                    Abholung direkt in Baden möglich. Jetzt unverbindlich anfragen!</p>
 
-                    <div class="seo-btns">
-                        <a href="kontakt.html" class="btn btn-primary">Jetzt Bestellen</a>
-                        <a href="https://wa.me/41772021758" class="btn btn-whatsapp" target="_blank"><i
-                                class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-                    </div>
-                </div>
-                <div class="seo-image animate-up delay-100">
-                    <img src="images/baden-seo-cake.webp" alt="Individuelle Geburtstagstorte Baden" width="800"
-                        height="800" loading="lazy">
+                <div class="seo-btns">
+                    <a href="kontakt.html" class="btn btn-primary">Jetzt Bestellen</a>
+                    <a href="https://wa.me/41772021758" class="btn btn-whatsapp" target="_blank"><i
+                            class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -171,11 +166,15 @@
                 <!-- Order Form -->
                 <div class="contact-form-container">
                     <h2 class="mb-2">Deine Anfrage</h2>
-                    <form action="https://formspree.io/f/info@mottocake.ch" method="POST" class="contact-form">
+                    <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data"
+                        class="contact-form">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
                         <!-- Redirect to thanks page -->
-                        <input type="hidden" name="_next" value="https://mottocake.ch/thanks.html">
+                        <input type="hidden" name="redirect" value="https://mottocake.ch/thanks.html">
                         <!-- Custom Subject -->
-                        <input type="hidden" name="_subject" value="Neue Tortenanfrage von Mottocake.ch">
+                        <input type="hidden" name="subject" id="email-subject"
+                            value="Neue Tortenanfrage von Mottocake.ch">
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required placeholder="Dein Name">
@@ -325,6 +324,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
                     <li><a href="leistungen.html">Leistungen & Preise</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
