@@ -420,6 +420,21 @@ img {
     transform: translateY(20px);
 }
 
+.gallery-overlay h3 {
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+    color: var(--white);
+}
+
+.view-more {
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.9;
+}
+
 .gallery-item:hover img {
     transform: scale(1.1);
 }
@@ -1174,5 +1189,76 @@ textarea:focus {
     .feature-list-compact {
         flex-direction: column;
         gap: 12px;
+    }
+}
+
+/* SEO Page Utilities & Styles */
+.mb-4 {
+    margin-bottom: 3rem;
+}
+
+.mt-4 {
+    margin-top: 3rem;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.separator::after {
+    content: "";
+    height: 2px;
+    background: var(--accent-pink);
+    flex: 1;
+}
+
+.styled-list {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.styled-list li {
+    margin-bottom: 10px;
+    position: relative;
+    list-style: none;
+}
+
+.styled-list li::before {
+    content: "♥";
+    color: var(--primary-color);
+    position: absolute;
+    left: -20px;
+}
+
+.cta-box {
+    background: var(--accent-pink);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(178, 124, 124, 0.2);
+}
+
+.seo-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+}
+
+.seo-content-full h3 {
+    margin-top: 30px;
+    font-size: 1.8rem;
+}
+
+.seo-content-full p {
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .grid-2-cols {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 }
