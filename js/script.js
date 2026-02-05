@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Dynamic Form Subject with Sender Name
+    // Dynamic Form Subject & AJAX Submission
     const contactForms = document.querySelectorAll('.contact-form');
     contactForms.forEach(form => {
         const nameInput = form.querySelector('input[name="name"]');
@@ -61,6 +61,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+
+        // Handle Form Submission via AJAX to ensure redirect works
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = 'Wird gesendet...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        // Redirect manually on success
+                        window.location.href = "thanks.html";
+                    } else {
+                        console.log(response);
+                        alert("Senden fehlgeschlagen. Bitte versuche es später erneut.");
+                        submitBtn.innerText = originalBtnText;
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    alert("Ein Fehler ist aufgetreten. Bitte versuche es später erneut.");
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+        });
     });
 
     // Gallery Filtering
