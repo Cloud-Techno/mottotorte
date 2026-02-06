@@ -1262,3 +1262,98 @@ textarea:focus {
         gap: 30px;
     }
 }
+
+/* galeri section modern  */
+/* Banner ana kapsayıcı */
+.banner {
+    width: 100%;
+    min-height: 450px;
+    height: 450px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 100px;
+    /* Substantial breathing room before the next section */
+}
+
+/* Slider container – unique class */
+.slider-3d-cover {
+    position: absolute;
+    width: 200px;
+    height: 240px;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%) perspective(600px);
+    animation: autoRun 40s linear infinite;
+    z-index: 2;
+}
+
+/* Slider animasyonu */
+@keyframes autoRun {
+    from {
+        transform: translate(-50%, -50%) perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+/* Her bir görsel kapsayıcısı */
+.slider-3d-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    /* opsiyonel */
+    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(400px);
+}
+
+/* Görselleri kapsayıcıya tam doldur */
+.slider-3d-item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive – tablet */
+@media screen and (max-width: 1023px) {
+    .banner {
+        min-height: 400px;
+        height: 400px;
+    }
+
+    .slider-3d-cover {
+        width: 200px;
+        height: 240px;
+    }
+
+    .slider-3d-item {
+        transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(400px);
+    }
+}
+
+/* Responsive – mobil */
+@media screen and (max-width: 767px) {
+    .banner {
+        min-height: 350px;
+        height: 350px;
+    }
+
+    .slider-3d-cover {
+        width: 150px;
+        height: 190px;
+
+    }
+
+    .slider-3d-item {
+        transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(250px);
+    }
+}
