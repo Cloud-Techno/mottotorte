@@ -413,17 +413,21 @@ img {
     left: 0;
     width: 100%;
     padding: 20px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 80%);
     color: var(--white);
-    opacity: 0;
+    opacity: 1;
+    /* Visible by default */
     transition: var(--transition);
-    transform: translateY(20px);
+    transform: translateY(0);
+    /* Normal position */
+    z-index: 2;
 }
 
 .gallery-overlay h3 {
     margin-bottom: 5px;
     font-size: 1.4rem;
     color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .view-more {
@@ -433,6 +437,7 @@ img {
     align-items: center;
     gap: 8px;
     opacity: 0.9;
+    transition: var(--transition);
 }
 
 .gallery-item:hover img {
@@ -440,8 +445,12 @@ img {
 }
 
 .gallery-item:hover .gallery-overlay {
-    opacity: 1;
-    transform: translateY(0);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 90%);
+}
+
+.gallery-item:hover .view-more {
+    gap: 12px;
+    /* Subtle arrow movement on hover */
 }
 
 /* About Teaser */
@@ -898,52 +907,108 @@ textarea:focus {
     }
 }
 
-/* Price Table Styles */
-.price-table-container {
+/* Refined Pricing Styles */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
     margin-top: 40px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.price-table {
-    width: 100%;
-    border-collapse: collapse;
+.pricing-card {
     background: var(--white);
-    box-shadow: var(--shadow-sm);
-    border-radius: 15px;
-    overflow: hidden;
-    margin: 0 auto;
-    max-width: 900px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    text-align: left;
+    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
-.price-table th,
-.price-table td {
-    padding: 20px;
-    border-bottom: 1px solid #f0f0f0;
-    text-align: center;
+.pricing-card h3 {
+    color: #8D6E63;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
 }
 
-.price-table th {
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    font-weight: 700;
+.pricing-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.price-table tr:last-child td {
+.pricing-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f8f8f8;
+    font-size: 1.15rem;
+    color: #444;
+}
+
+.pricing-list li:last-child {
     border-bottom: none;
 }
 
-.price-table tr:hover {
-    background-color: #fcfcfc;
+.pricing-notes {
+    max-width: 1100px;
+    margin: 60px auto 0;
+    text-align: left;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.pricing-notes h4 {
+    color: #8D6E63;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.pricing-notes ul {
+    list-style: none;
+    padding: 0;
+    color: #555;
+}
+
+.pricing-notes li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    padding-left: 25px;
+    position: relative;
+    font-size: 1.05rem;
+}
+
+.pricing-notes li::before {
+    content: "•";
+    color: #8D6E63;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .pricing-grid {
+        gap: 20px;
+    }
+
+    .pricing-card {
+        padding: 25px;
+    }
 }
 
 @media (max-width: 600px) {
-
-    .price-table th,
-    .price-table td {
-        padding: 12px 8px;
-        font-size: 0.85rem;
+    .pricing-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1267,8 +1332,8 @@ textarea:focus {
 /* Banner ana kapsayıcı */
 .banner {
     width: 100%;
-    min-height: 450px;
-    height: 450px;
+    min-height: 550px;
+    height: 550px;
     text-align: center;
     overflow: hidden;
     position: relative;
@@ -1281,7 +1346,8 @@ textarea:focus {
     position: absolute;
     width: 200px;
     height: 240px;
-    top: 50%;
+    top: 45%;
+    /* Slightly higher to give more room at the bottom during rotation */
     left: 50%;
     transform-style: preserve-3d;
     transform: translate(-50%, -50%) perspective(600px);
@@ -1326,8 +1392,8 @@ textarea:focus {
 /* Responsive – tablet */
 @media screen and (max-width: 1023px) {
     .banner {
-        min-height: 400px;
-        height: 400px;
+        min-height: 430px;
+        height: 430px;
     }
 
     .slider-3d-cover {
@@ -1343,8 +1409,8 @@ textarea:focus {
 /* Responsive – mobil */
 @media screen and (max-width: 767px) {
     .banner {
-        min-height: 350px;
-        height: 350px;
+        min-height: 380px;
+        height: 380px;
     }
 
     .slider-3d-cover {
@@ -1355,5 +1421,64 @@ textarea:focus {
 
     .slider-3d-item {
         transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(250px);
+    }
+}
+
+/* Ana bölüm stilizasyonu */
+.process-image-section {
+    padding: 40px 15px;
+    /* Dikey boşluk ve yanlarda küçük bir boşluk */
+    background-color: #fdfaf6;
+    /* Görselin arka planıyla uyumlu soft bir renk */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Okunabilir bir font */
+    text-align: center;
+    /* İçeriği ortalar */
+}
+
+/* Görseli sarmalayan kapsayıcı */
+.image-container {
+    max-width: 600px;
+    /* Görselin maksimum genişliği (mobil için ideal, masaüstünde ortalanır) */
+    margin: 0 auto;
+    /* Görseli yatayda ortalar */
+    padding: 0;
+    /* Ekstra boşlukları sıfırlar */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    /* Hafif bir gölge efekti verir, profesyonel bir hava katar */
+    border-radius: 15px;
+    /* Köşeleri yumuşatır */
+    overflow: hidden;
+    /* Köşe yuvarlamanın içindeki görselin taşmasını engeller */
+}
+
+/* Responsive görsel stili */
+.responsive-image {
+    max-width: 100%;
+    /* Görselin kapsayıcısının genişliğine göre boyutlanmasını sağlar */
+    height: auto;
+    /* Oranlarını koruyarak yüksekliği otomatik ayarlar */
+    display: block;
+    /* Görselin altındaki boşluğu kaldırır */
+}
+
+/* Masaüstü ekranlar için optimizasyon */
+@media (min-width: 768px) {
+    .process-image-section {
+        padding: 80px 30px;
+        /* Masaüstünde daha fazla dikey boşluk */
+    }
+
+    .image-container {
+        max-width: 700px;
+        /* Masaüstünde görselin biraz daha geniş olmasını sağlar */
+    }
+}
+
+/* Büyük masaüstü ekranlar için ekstra optimizasyon (isteğe bağlı) */
+@media (min-width: 1200px) {
+    .image-container {
+        max-width: 500px;
+        /* Daha büyük ekranlarda görseli biraz daha geniş gösterir */
     }
 }
