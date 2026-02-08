@@ -1,27 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>https://motto-torten.de/index.html</loc>
-      <lastmod>2024-05-20</lastmod>
+      <loc>https://mottocake.ch/index.html</loc>
+      <lastmod>2026-02-08</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://motto-torten.de/ueber-uns.html</loc>
-      <lastmod>2024-05-20</lastmod>
+      <loc>https://mottocake.ch/ueber-uns.html</loc>
+      <lastmod>2026-02-08</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://motto-torten.de/leistungen.html</loc>
-      <lastmod>2024-05-20</lastmod>
+      <loc>https://mottocake.ch/leistungen.html</loc>
+      <lastmod>2026-02-08</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://motto-torten.de/kontakt.html</loc>
-      <lastmod>2024-05-20</lastmod>
+      <loc>https://mottocake.ch/kontakt.html</loc>
+      <lastmod>2026-02-08</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://mottocake.ch/geburtstagstorten-baden.html</loc>
+      <lastmod>2026-02-08</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://mottocake.ch/hochzeitstorten-baden.html</loc>
+      <lastmod>2026-02-08</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://mottocake.ch/kindergeburtstagstorten-baden.html</loc>
+      <lastmod>2026-02-08</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://mottocake.ch/motivtorten-luxus-designs-baden.html</loc>
+      <lastmod>2026-02-08</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://mottocake.ch/galerie.html</loc>
+      <lastmod>2026-02-08</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://mottocake.ch/impressum.html</loc>
+      <lastmod>2026-02-08</lastmod>
       <changefreq>yearly</changefreq>
-      <priority>0.5</priority>
+      <priority>0.3</priority>
+   </url>
+   <url>
+      <loc>https://mottocake.ch/datenschutz.html</loc>
+      <lastmod>2026-02-08</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
+   </url>
+   <url>
+      <loc>https://mottocake.ch/agb.html</loc>
+      <lastmod>2026-02-08</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
    </url>
 </urlset>
