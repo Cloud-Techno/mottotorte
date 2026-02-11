@@ -996,6 +996,31 @@ textarea:focus {
     line-height: 1;
 }
 
+/* Highlight Card for Included Items */
+.highlight-card {
+    background: linear-gradient(135deg, #fdfaf3 0%, #fff9f0 100%);
+    border: 2px solid #e8d5c4;
+}
+
+.included-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(232, 213, 196, 0.3);
+}
+
+.included-list li i {
+    color: #2ecc71;
+    font-size: 1.2rem;
+    min-width: 20px;
+}
+
+.included-list li span {
+    flex: 1;
+}
+
+
 @media (max-width: 768px) {
     .pricing-grid {
         gap: 20px;
