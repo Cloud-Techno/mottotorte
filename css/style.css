@@ -1579,3 +1579,79 @@ textarea:focus {
         margin-right: auto;
     }
 }
+/* Hero Split Section for Landing Pages */
+.hero-split {
+    overflow: hidden;
+}
+
+.sub-title {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.image-wrapper-premium {
+    position: relative;
+    z-index: 1;
+    padding-right: 20px;
+}
+
+.image-wrapper-premium::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 90%;
+    height: 90%;
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.rounded-shadow-premium {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    width: 100%;
+}
+
+.rounded-shadow-premium:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 992px) {
+    .hero-split .grid-2-cols {
+        gap: 30px;
+    }
+    .lead-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-wrapper-premium::before {
+        display: none;
+    }
+    .image-wrapper-premium {
+        padding-right: 0;
+    }
+    .hero-split {
+        padding-top: 100px;
+        text-align: center;
+    }
+    .hero-cta {
+        justify-content: center;
+    }
+}
