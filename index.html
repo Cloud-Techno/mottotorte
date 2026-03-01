@@ -31,12 +31,31 @@
     <link rel="preload" as="image" href="images/hero.webp">
     <!-- Global site tag (gtag.js) - Google Ads: 17608193596 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17608193596"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'AW-17608193596');
+    </script>
+
+    <!-- Google Ads Conversion Tracking Function -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17608193596/7oZ6CKej5YAcELzsnsxB',
+                'value': 100.0,
+                'currency': 'CHF',
+                'event_callback': callback
+            });
+            return false;
+        }
     </script>
 
 </head>
@@ -64,7 +83,7 @@
             </nav>
 
             <a href="https://wa.me/41772021758" class="header-whatsapp-btn" target="_blank"
-                aria-label="WhatsApp Kontakt" onclick="return gtag_report_conversion('https://wa.me/41772021758');">
+                aria-label="WhatsApp Kontakt" onclick="return gtag_report_conversion(this.href);">
                 <i class="fa-brands fa-whatsapp"></i>
             </a>
         </div>
@@ -108,8 +127,8 @@
                 <div class="seo-btns">
                     <a href="kontakt.html" class="btn btn-primary">Jetzt Bestellen</a>
                     <a href="https://wa.me/41772021758" class="btn btn-whatsapp" target="_blank"
-                        onclick="return gtag_report_conversion('https://wa.me/41772021758');"></a><i
-                        class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        onclick="return gtag_report_conversion(this.href);"></a><i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -269,7 +288,7 @@
                             <div class="contact-line">
                                 <i class="fa-brands fa-whatsapp"></i>
                                 <a href="https://wa.me/41772021758"
-                                    onclick="return gtag_report_conversion('https://wa.me/41772021758');"></a>+41 77 202
+                                    onclick="return gtag_report_conversion(this.href);"></a>+41 77 202
                                 1758</a>
                             </div>
                             <div class="contact-line">
@@ -328,8 +347,7 @@
                     hochwertigen Zutaten hergestellt.</p>
                 <div class="social-links">
                     <a href="https://wa.me/41772021758" class="whatsapp" aria-label="WhatsApp" target="_blank" <a
-                        href="https://wa.me/41772021758"
-                        onclick="return gtag_report_conversion('https://wa.me/41772021758');"><i
+                        href="https://wa.me/41772021758" onclick="return gtag_report_conversion(this.href);"><i
                             class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
@@ -359,7 +377,7 @@
                 <p><i class="fa-solid fa-location-dot"></i> Stadtbachstrasse 15, 5400 Baden</p>
                 <p><i class="fa-solid fa-envelope"></i> info@mottocake.ch</p>
                 <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/41772021758"
-                        onclick="return gtag_report_conversion('https://wa.me/41772021758');">+41 77 202 17 58</a></p>
+                        onclick="return gtag_report_conversion(this.href);">+41 77 202 17 58</a></p>
             </div>
         </div>
         <div class="footer-bottom text-center">
@@ -369,7 +387,7 @@
 
     <!-- Sticky WhatsApp Button -->
     <a href="https://wa.me/41772021758" class="sticky-whatsapp" target="_blank" aria-label="Chatte mit uns auf WhatsApp"
-        onclick="return gtag_report_conversion('https://wa.me/41772021758');">
+        onclick="return gtag_report_conversion(this.href);">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
