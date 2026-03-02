@@ -47,13 +47,38 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
+    <!-- Global site tag (gtag.js) - Google Ads: 17608193596 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17608193596"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17608193596');
+    </script>
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17608193596/7oZ6CKej5YAcELzsnsxB',
+                'value': 100.0,
+                'currency': 'CHF',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
 </head>
 
 <body>
 
     <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">Motto<span class="logo-accent">cake</span></a>
+        <div class="container header-container"><a href="index.html" class="logo">Motto<span
+                    class="logo-accent">Cake</span></a>
             <button class="mobile-nav-toggle" aria-label="Menü öffnen">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -67,8 +92,9 @@
                 </ul>
             </nav>
             <a href="https://wa.me/41772021758" class="header-whatsapp-btn" target="_blank"
-                aria-label="Kontakt via WhatsApp" onclick="return gtag_report_conversion(this.href);"><i
-                    class="fa-brands fa-whatsapp"></i></a>
+                aria-label="WhatsApp Kontakt" onclick="return gtag_report_conversion(this.href);">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
         </div>
     </header>
 
@@ -238,19 +264,28 @@
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-col">
-                <a href="index.html" class="logo">Motto<span class="logo-accent">cake</span></a>
-                <p>Handgefertigte Tortenkunst für deine unvergesslichen Momente in Baden und Umgebung.</p>
+                <h3>Motto<span class="logo-accent">Cake</span></h3>
+                <p>Ich bin eine Hauskonditorin aus Baden und spezialisiere mich auf BoutiqueTorten, individuelle Design
+                    Torten und frische Geburtstagstorten. Alle Kreationen werden hygienisch, handgemacht und aus
+                    hochwertigen Zutaten hergestellt.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/41772021758" class="whatsapp" aria-label="WhatsApp" target="_blank" <a
+                        href="https://wa.me/41772021758" onclick="return gtag_report_conversion(this.href);"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                </div>
             </div>
+
             <div class="footer-col">
-                <h4>Navigation</h4>
+                <h4>Menü</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="ueber-uns.html">Über uns</a></li>
                     <!-- <li><a href="galerie.html">Galerie</a></li> -->
-                    <li><a href="leistungen.html">Leistungen</a></li>
+                    <li><a href="leistungen.html">Leistungen & Preise</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
             </div>
+
             <div class="footer-col">
                 <h4>Rechtliches</h4>
                 <ul>
@@ -259,18 +294,24 @@
                     <li><a href="agb.html">AGB</a></li>
                 </ul>
             </div>
+
             <div class="footer-col">
                 <h4>Kontakt</h4>
-                <p>Stadtbachstrasse 15<br>5400 Baden</p>
-                <p>+41 77 202 1758</p>
-                <p>info@mottocake.ch</p>
+                <p><i class="fa-solid fa-location-dot"></i> Stadtbachstrasse 15, 5400 Baden</p>
+                <p><i class="fa-solid fa-envelope"></i> info@mottocake.ch</p>
+                <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/41772021758"
+                        onclick="return gtag_report_conversion(this.href);">+41 77 202 17 58</a></p>
             </div>
         </div>
         <div class="footer-bottom text-center">
-            <p>&copy; 2025 Mottocake Tortenmanufaktur. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2025 MottoCake Tortenmanufaktur. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
+    <a href="https://wa.me/41772021758" class="sticky-whatsapp" target="_blank" aria-label="Chatte mit uns auf WhatsApp"
+        onclick="return gtag_report_conversion(this.href);">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
     <script src="js/script.js"></script>
 </body>
 

@@ -351,23 +351,43 @@ img {
 }
 
 .feature-card {
+    display: block;
     text-align: center;
-    padding: 30px;
+    padding: 40px 30px;
     background: var(--white);
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
 }
 
+a.feature-card {
+    cursor: pointer;
+}
+
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     box-shadow: var(--shadow-md);
+    background-color: var(--white);
 }
 
 .icon-box {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    transition: var(--transition);
+}
+
+.feature-card:hover .icon-box {
+    transform: scale(1.1);
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.feature-card:hover h3 {
+    color: var(--primary-color);
 }
 
 /* Gallery Teaser in Index */

@@ -13,13 +13,38 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
+    <!-- Global site tag (gtag.js) - Google Ads: 17608193596 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17608193596"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17608193596');
+    </script>
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17608193596/7oZ6CKej5YAcELzsnsxB',
+                'value': 100.0,
+                'currency': 'CHF',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
 </head>
 
 <body>
 
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">Motto<span class="logo-accent">cake</span></a>
+            <a href="index.html" class="logo">Motto<span class="logo-accent">Cake</span></a>
             <button class="mobile-nav-toggle" aria-label="Menü öffnen">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -33,7 +58,9 @@
                 </ul>
             </nav>
             <a href="https://wa.me/41772021758" class="header-whatsapp-btn" target="_blank"
-                aria-label="Kontakt via WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                aria-label="WhatsApp Kontakt" onclick="return gtag_report_conversion(this.href);">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
         </div>
     </header>
 
@@ -96,12 +123,17 @@
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-col">
-                <h3>Motto<span class="logo-accent">cake</span></h3>
+                <h3>Motto<span class="logo-accent">Cake</span></h3>
+                <p>Ich bin eine Hauskonditorin aus Baden und spezialisiere mich auf BoutiqueTorten, individuelle Design
+                    Torten und frische Geburtstagstorten. Alle Kreationen werden hygienisch, handgemacht und aus
+                    hochwertigen Zutaten hergestellt.</p>
                 <div class="social-links">
-                    <a href="https://wa.me/41772021758" class="whatsapp" aria-label="WhatsApp" target="_blank"><i
+                    <a href="https://wa.me/41772021758" class="whatsapp" aria-label="WhatsApp" target="_blank" <a
+                        href="https://wa.me/41772021758" onclick="return gtag_report_conversion(this.href);"><i
                             class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
+
             <div class="footer-col">
                 <h4>Menü</h4>
                 <ul>
@@ -112,6 +144,7 @@
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
             </div>
+
             <div class="footer-col">
                 <h4>Rechtliches</h4>
                 <ul>
@@ -120,15 +153,17 @@
                     <li><a href="agb.html">AGB</a></li>
                 </ul>
             </div>
+
             <div class="footer-col">
                 <h4>Kontakt</h4>
                 <p><i class="fa-solid fa-location-dot"></i> Stadtbachstrasse 15, 5400 Baden</p>
                 <p><i class="fa-solid fa-envelope"></i> info@mottocake.ch</p>
-                <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/41772021758">+41 77 202 17 58</a></p>
+                <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/41772021758"
+                        onclick="return gtag_report_conversion(this.href);">+41 77 202 17 58</a></p>
             </div>
         </div>
         <div class="footer-bottom text-center">
-            <p>&copy; 2024 MottoCake Tortenmanufaktur. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2025 MottoCake Tortenmanufaktur. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
