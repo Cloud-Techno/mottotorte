@@ -1624,18 +1624,18 @@ textarea:focus {
 .image-wrapper-premium {
     position: relative;
     z-index: 1;
-    padding-right: 20px;
+    padding: 15px;
 }
 
 .image-wrapper-premium::before {
     content: '';
     position: absolute;
-    top: 20px;
-    right: 0;
-    width: 90%;
-    height: 90%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border: 2px solid var(--primary-color);
-    border-radius: 20px;
+    border-radius: 25px;
     z-index: -1;
     opacity: 0.3;
 }
@@ -1667,7 +1667,7 @@ textarea:focus {
     }
 
     .image-wrapper-premium {
-        padding-right: 0;
+        padding: 0;
     }
 
     .hero-split {
