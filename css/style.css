@@ -702,6 +702,13 @@ a.feature-card {
 
     .grid-2-cols {
         grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grid-2-cols .seo-image,
+    .grid-2-cols .about-image {
+        order: -1;
     }
 
     .header {
