@@ -41,6 +41,25 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-TV2M82VN');</script>
     <!-- End Google Tag Manager -->
+    <!-- Event snippet for Tıkla ve ara conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17608193596/HeI6CKT24b0cELzsnsxB',
+                'value': 1.0,
+                'currency': 'CHF',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+
 
 </head>
 
