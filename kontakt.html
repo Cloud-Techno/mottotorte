@@ -119,15 +119,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="guests">Anzahl Personen *</label>
-                                <select id="guests" name="guests" required>
-                                    <option value="" disabled selected>Bitte wählen</option>
-                                    <option value="6-8">6 - 8 Personen</option>
-                                    <option value="9-11">9 - 11 Personen</option>
-                                    <option value="14-16">14 - 16 Personen</option>
-                                    <option value="18-20">18 - 20 Personen</option>
-                                    <option value="20+">20+ Personen (Sondergrösse)</option>
-                                    <option value="other">Andere (siehe Nachricht)</option>
-                                </select>
+                                <input type="number" id="guests" name="guests" min="1" required placeholder="z. B. 10">
                             </div>
                         </div>
 

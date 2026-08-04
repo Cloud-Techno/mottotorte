@@ -138,4 +138,27 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Restrict guests input to positive whole numbers only
+    const guestsInput = document.getElementById('guests');
+    if (guestsInput) {
+        guestsInput.addEventListener('keydown', (e) => {
+            // Allow control keys (Backspace, Tab, Escape, Enter, Arrow keys, etc.)
+            const allowedKeys = [
+                'Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'
+            ];
+            if (e.metaKey || e.ctrlKey || allowedKeys.includes(e.key)) {
+                return;
+            }
+            // Block anything that is not a numeric digit (0-9)
+            if (!/^\d$/.test(e.key)) {
+                e.preventDefault();
+            }
+        });
+
+        // Clean any non-digit characters on input (handles paste/drag & drop)
+        guestsInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+    }
 });
