@@ -104,22 +104,28 @@ img {
     background-color: var(--primary-color);
     color: var(--white);
     border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 10px rgba(178, 124, 124, 0.2);
 }
 
 .btn-primary:hover {
     background-color: transparent;
     color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(178, 124, 124, 0.35);
 }
 
 .btn-secondary {
     background-color: var(--secondary-color);
     color: var(--white);
     border: 2px solid var(--secondary-color);
+    box-shadow: 0 4px 10px rgba(44, 44, 44, 0.15);
 }
 
 .btn-secondary:hover {
     background-color: transparent;
     color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(44, 44, 44, 0.25);
 }
 
 
@@ -130,11 +136,14 @@ img {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
 }
 
 .btn-whatsapp:hover {
     background-color: transparent;
     color: #25D366;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
 }
 
 /* SEO Content Section */
@@ -158,7 +167,7 @@ img {
 }
 
 .seo-text-only h2 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5.5vw, 3rem);
     margin-bottom: 30px;
     line-height: 1.1;
 }
@@ -210,8 +219,14 @@ img {
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: var(--shadow-sm);
-    padding: 15px 0;
+    padding: 18px 0;
     transition: var(--transition);
+}
+
+.header.scrolled {
+    padding: 10px 0;
+    box-shadow: var(--shadow-md);
+    background-color: rgba(253, 251, 247, 0.98);
 }
 
 .header-container {
@@ -276,15 +291,15 @@ img {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--white);
     margin-top: 0;
-    padding-top: 60px;
-    /* offset for header if needed, usually 0 for fullscreen hero */
+    padding: 100px 0 60px;
 }
 
 .hero-bg {
@@ -311,7 +326,7 @@ img {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
     color: var(--white);
     line-height: 1.2;
     margin-bottom: 20px;
@@ -334,7 +349,7 @@ img {
 
 /* Features */
 .section-title h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 4.5vw, 2.5rem);
     margin-bottom: 10px;
 }
 
@@ -346,8 +361,15 @@ img {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+@media (max-width: 900px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
 }
 
 .feature-card {
@@ -390,11 +412,26 @@ a.feature-card {
     color: var(--primary-color);
 }
 
-/* Gallery Teaser in Index */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+}
+
+.home-gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .home-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .home-gallery-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .gallery-item {
@@ -506,7 +543,7 @@ a.feature-card {
 
 .footer-col h3 {
     color: var(--white);
-    font-size: 2.2rem;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
     margin-bottom: 1.5rem;
     font-family: var(--font-heading);
 }
@@ -665,16 +702,16 @@ a.feature-card {
     }
 
     .main-nav {
-        position: fixed;
-        top: 50px;
+        position: absolute;
+        top: 100%;
         right: -100%;
         width: 100%;
         height: auto;
         /* Height adapts to content */
-        max-height: calc(100vh - 50px);
+        max-height: calc(100vh - 100%);
         background-color: var(--white);
-        transition: 0.3s;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -712,7 +749,11 @@ a.feature-card {
     }
 
     .header {
-        padding: 10px 0;
+        padding: 12px 0;
+    }
+
+    .header.scrolled {
+        padding: 8px 0;
     }
 
     .header-container {

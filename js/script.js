@@ -26,21 +26,38 @@ document.addEventListener('DOMContentLoaded', () => {
             if (nav.classList.contains('active')) {
                 nav.classList.remove('active');
                 const icon = mobileBtn.querySelector('i');
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
+                if (icon) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
             }
         });
+    });
+
+    // Close mobile menu when clicking anywhere outside
+    document.addEventListener('click', (e) => {
+        if (nav && mobileBtn && nav.classList.contains('active')) {
+            const isClickInsideMenu = nav.contains(e.target);
+            const isClickOnToggle = mobileBtn.contains(e.target);
+
+            if (!isClickInsideMenu && !isClickOnToggle) {
+                nav.classList.remove('active');
+                const icon = mobileBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        }
     });
 
     // Sticky Header Effect
     const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            header.style.padding = '10px 0';
-            header.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            header.classList.add('scrolled');
         } else {
-            header.style.padding = '15px 0';
-            header.style.boxShadow = 'var(--shadow-sm)';
+            header.classList.remove('scrolled');
         }
     });
 
