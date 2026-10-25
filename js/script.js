@@ -1,3 +1,70 @@
+// ==========================================================================
+// MottoCake Creative Preloader Engine (Senior Developer)
+// ==========================================================================
+(function initMottoCakePreloader() {
+    const preloader = document.getElementById('mk-preloader');
+    if (!preloader) return;
+
+    // Show ONLY on the very first homepage visit in this session
+    if (sessionStorage.getItem('mk_preloader_seen')) {
+        preloader.style.display = 'none';
+        document.body.classList.remove('mk-loading');
+        return;
+    }
+
+    // Flag as seen so all future visits / page navigations skip it
+    sessionStorage.setItem('mk_preloader_seen', 'true');
+    document.body.classList.add('mk-loading');
+
+    const startTime = performance.now();
+    const minDuration = 1100; // smooth presentation duration (ms)
+    let isFinished = false;
+
+    function triggerReveal() {
+        if (isFinished) return;
+        isFinished = true;
+
+        const elapsed = performance.now() - startTime;
+        const delay = Math.max(0, minDuration - elapsed);
+
+        setTimeout(() => {
+            // Stage 1: Soft scale & fade inner elements
+            preloader.classList.add('mk-stage-exit');
+
+            // Stage 2: Curtain upward sweep (Awwwards-style cubic-bezier)
+            setTimeout(() => {
+                preloader.classList.add('mk-curtain-up');
+                document.body.classList.remove('mk-loading');
+
+                // Stage 3: Clean up and hide
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 850);
+            }, 280);
+        }, delay);
+    }
+
+    // Event Listeners
+    if (document.readyState === 'complete') {
+        triggerReveal();
+    } else {
+        window.addEventListener('load', triggerReveal);
+    }
+
+    // Fallback safety timeout (max 2.6s) in case an external script hangs
+    setTimeout(() => {
+        triggerReveal();
+    }, 2600);
+
+    // Handle browser Back/Forward (bfcache)
+    window.addEventListener('pageshow', function (e) {
+        if (e.persisted || sessionStorage.getItem('mk_preloader_seen')) {
+            preloader.style.display = 'none';
+            document.body.classList.remove('mk-loading');
+        }
+    });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
     const mobileBtn = document.querySelector('.mobile-nav-toggle');

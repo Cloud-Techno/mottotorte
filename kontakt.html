@@ -83,7 +83,7 @@
             <div class="contact-grid">
 
                 <!-- Order Form -->
-                <div class="contact-form-container">
+                <div class="contact-form-container" id="order-form">
                     <h2 class="mb-2">Deine Anfrage</h2>
                     <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data"
                         class="contact-form">
@@ -234,6 +234,21 @@
         onclick="return gtag_report_conversion(this.href);">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+    <!-- Mobile Fixed Bottom Action Bar -->
+    <div class="mobile-fixed-bottom-bar" aria-label="Schnellkontakt und Bestellung">
+        <a href="https://wa.me/41772021758" class="mobile-action-btn btn-action-whatsapp" target="_blank"
+            aria-label="WhatsApp Nachricht senden" onclick="return typeof gtag_report_conversion === 'function' ? gtag_report_conversion(this.href) : true;">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+        <a href="#order-form" class="mobile-action-btn btn-action-order"
+            aria-label="Torte bestellen / Anfrage senden">
+            <i class="fa-solid fa-cake-candles"></i>
+            <span>Torte bestellen</span>
+        </a>
+    </div>
+
     <script src="js/script.js" defer></script>
 
 
