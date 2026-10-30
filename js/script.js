@@ -17,7 +17,7 @@
     document.body.classList.add('mk-loading');
 
     const startTime = performance.now();
-    const minDuration = 1100; // smooth presentation duration (ms)
+    const minDuration = 3500; // smooth presentation duration (ms)
     let isFinished = false;
 
     function triggerReveal() {
