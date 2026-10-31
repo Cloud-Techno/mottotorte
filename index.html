@@ -60,8 +60,12 @@
 
     <!-- Session Preloader Check (Runs synchronously before render to prevent flicker on return visits) -->
     <script>
-        if (sessionStorage.getItem('mk_preloader_seen')) {
-            document.documentElement.classList.add('no-preloader');
+        try {
+            if (sessionStorage.getItem('mk_preloader_seen') === 'true') {
+                document.documentElement.classList.add('no-preloader');
+            }
+        } catch (error) {
+            console.warn('Preloader state could not be read from session storage.', error);
         }
     </script>
 

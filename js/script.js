@@ -6,18 +6,29 @@
     if (!preloader) return;
 
     // Show ONLY on the very first homepage visit in this session
-    if (sessionStorage.getItem('mk_preloader_seen')) {
+    let hasSeenPreloader = false;
+    try {
+        hasSeenPreloader = sessionStorage.getItem('mk_preloader_seen') === 'true';
+    } catch (error) {
+        console.warn('Preloader state could not be read from session storage.', error);
+    }
+
+    if (hasSeenPreloader) {
         preloader.style.display = 'none';
         document.body.classList.remove('mk-loading');
         return;
     }
 
     // Flag as seen so all future visits / page navigations skip it
-    sessionStorage.setItem('mk_preloader_seen', 'true');
+    try {
+        sessionStorage.setItem('mk_preloader_seen', 'true');
+    } catch (error) {
+        console.warn('Preloader state could not be saved to session storage.', error);
+    }
     document.body.classList.add('mk-loading');
 
     const startTime = performance.now();
-    const minDuration = 3500; // smooth presentation duration (ms)
+    const minDuration = 1500; // smooth presentation duration (ms)
     let isFinished = false;
 
     function triggerReveal() {
@@ -58,7 +69,7 @@
 
     // Handle browser Back/Forward (bfcache)
     window.addEventListener('pageshow', function (e) {
-        if (e.persisted || sessionStorage.getItem('mk_preloader_seen')) {
+        if (e.persisted) {
             preloader.style.display = 'none';
             document.body.classList.remove('mk-loading');
         }
