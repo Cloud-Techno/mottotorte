@@ -1,0 +1,560 @@
+.catering-page {
+    --catering-rose: #935f5f;
+    --catering-blush: #f5eaea;
+    --catering-cream: #fbf8f5;
+    --catering-ink: #292525;
+    --catering-muted: #716766;
+    background: #fffdfc;
+    color: var(--catering-ink);
+}
+
+.catering-page main {
+    overflow: hidden;
+}
+
+.catering-page .header {
+    background: rgba(253, 251, 247, 0.97);
+}
+
+.catering-page .header .logo {
+    white-space: nowrap;
+}
+
+.catering-page .nav-list a.active {
+    color: var(--catering-rose);
+}
+
+.catering-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: 93px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: var(--catering-muted);
+    font-size: 0.85rem;
+}
+
+.catering-breadcrumb a {
+    color: var(--catering-rose);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.catering-breadcrumb i {
+    color: #b69a98;
+    font-size: 0.65rem;
+}
+
+.catering-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(380px, 1.08fr);
+    align-items: center;
+    gap: clamp(36px, 7vw, 100px);
+    width: min(1320px, 100%);
+    margin: 0 auto;
+    padding: 45px max(5%, calc((100% - 1200px) / 2)) 72px;
+}
+
+.catering-hero__content {
+    max-width: 580px;
+}
+
+.catering-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 15px;
+    color: var(--catering-rose);
+    font-size: 0.77rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.catering-hero h1 {
+    max-width: 650px;
+    margin: 0;
+    color: var(--catering-ink);
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 5vw, 4.65rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1.06;
+}
+
+.catering-hero__lead {
+    max-width: 530px;
+    margin: 22px 0 0;
+    color: var(--catering-muted);
+    font-size: clamp(1rem, 1.3vw, 1.13rem);
+    line-height: 1.8;
+}
+
+.catering-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 21px;
+    margin-top: 28px;
+}
+
+.catering-hero__actions .btn,
+.catering-bottom .btn {
+    padding: 14px 22px;
+    font-size: 0.78rem;
+    letter-spacing: 0.07em;
+    text-align: center;
+}
+
+.catering-hero__actions .btn-primary:hover,
+.catering-bottom .btn-primary:hover {
+    background: transparent;
+    color: var(--catering-rose);
+}
+
+.catering-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--catering-rose);
+    font-size: 0.91rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.catering-text-link:hover {
+    color: #724545;
+}
+
+.catering-hero__note {
+    margin: 19px 0 0;
+    color: #827675;
+    font-size: 0.8rem;
+}
+
+.catering-hero__visual {
+    overflow: hidden;
+    border-radius: 48% 48% 14px 14px;
+    background: #eadbce;
+    box-shadow: 0 20px 55px rgba(79, 53, 47, 0.13);
+}
+
+.catering-hero__visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+}
+
+.catering-image-note {
+    display: block;
+    padding: 12px 18px;
+    background: #fffaf7;
+    color: #695b58;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.catering-intro {
+    padding: 29px 0;
+    background: var(--catering-cream);
+}
+
+.catering-intro__inner {
+    display: flex;
+    max-width: 890px;
+    align-items: center;
+    gap: 21px;
+    margin: 0 auto;
+}
+
+.catering-intro__mark {
+    display: grid;
+    width: 53px;
+    height: 53px;
+    flex: 0 0 53px;
+    place-items: center;
+    border: 1px solid rgba(147, 95, 95, 0.32);
+    border-radius: 50%;
+    color: var(--catering-rose);
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+}
+
+.catering-intro__inner p {
+    margin: 0;
+    color: #5e5553;
+    font-size: 0.97rem;
+    line-height: 1.7;
+}
+
+.catering-offerings {
+    padding: 75px 0 78px;
+}
+
+.catering-section-heading {
+    max-width: 710px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.catering-section-heading .catering-eyebrow {
+    justify-content: center;
+}
+
+.catering-section-heading h2,
+.catering-bottom h2 {
+    margin: 0;
+    color: var(--catering-ink);
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.5vw, 3.1rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+}
+
+.catering-section-heading > p:last-child {
+    max-width: 620px;
+    margin: 12px auto 0;
+    color: var(--catering-muted);
+    font-size: 0.96rem;
+    line-height: 1.7;
+}
+
+.catering-offering-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.catering-card {
+    overflow: hidden;
+    border: 1px solid rgba(147, 95, 95, 0.12);
+    border-radius: 13px;
+    background: #fff;
+    box-shadow: 0 11px 30px rgba(63, 45, 41, 0.055);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.catering-card:hover {
+    box-shadow: 0 16px 38px rgba(63, 45, 41, 0.1);
+    transform: translateY(-4px);
+}
+
+.catering-card > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    background: var(--catering-blush);
+    object-fit: cover;
+}
+
+.catering-card__body {
+    min-height: 137px;
+    padding: 17px 18px 19px;
+}
+
+.catering-card__eyebrow {
+    color: var(--catering-rose);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.catering-card h3 {
+    margin: 5px 0 7px;
+    color: var(--catering-ink);
+    font-family: var(--font-heading);
+    font-size: 1.26rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.catering-card p {
+    margin: 0;
+    color: var(--catering-muted);
+    font-size: 0.83rem;
+    line-height: 1.55;
+}
+
+.catering-card--wide {
+    display: grid;
+    grid-column: span 2;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: stretch;
+}
+
+.catering-card--wide > img {
+    height: 100%;
+    min-height: 172px;
+    aspect-ratio: auto;
+}
+
+.catering-card--wide .catering-card__body {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    justify-content: center;
+    padding: 22px;
+}
+
+.catering-disclaimer {
+    display: flex;
+    max-width: 850px;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 26px auto 0;
+    padding: 13px 16px;
+    border: 1px solid rgba(147, 95, 95, 0.14);
+    border-radius: 8px;
+    background: #fdf8f6;
+    color: #625452;
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+.catering-disclaimer i {
+    margin-top: 3px;
+    color: var(--catering-rose);
+}
+
+.catering-bottom {
+    padding: 42px 0;
+    background: #f6efec;
+}
+
+.catering-bottom__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.catering-bottom .catering-eyebrow {
+    margin-bottom: 8px;
+}
+
+.catering-bottom h2 {
+    max-width: 650px;
+    font-size: clamp(1.7rem, 3vw, 2.45rem);
+}
+
+.catering-page :focus-visible {
+    outline: 3px solid rgba(147, 95, 95, 0.7);
+    outline-offset: 3px;
+}
+
+@media (max-width: 1000px) {
+    .catering-hero {
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+        gap: 36px;
+    }
+
+    .catering-offering-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .catering-card--wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .catering-page {
+        padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+
+    .catering-breadcrumb {
+        margin-top: 74px;
+        padding-top: 12px;
+        padding-bottom: 10px;
+        font-size: 0.75rem;
+    }
+
+    .catering-hero {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 25px 6% 45px;
+    }
+
+    .catering-hero h1 {
+        max-width: 580px;
+        font-size: clamp(2.55rem, 8vw, 3.7rem);
+    }
+
+    .catering-hero__lead {
+        margin-top: 16px;
+        font-size: 0.98rem;
+    }
+
+    .catering-hero__actions {
+        gap: 17px;
+        margin-top: 22px;
+    }
+
+    .catering-hero__actions .btn {
+        padding: 13px 17px;
+        font-size: 0.7rem;
+    }
+
+    .catering-hero__visual {
+        width: min(100%, 560px);
+        margin: 0 auto;
+    }
+
+    .catering-intro {
+        padding: 23px 0;
+    }
+
+    .catering-intro__inner {
+        gap: 14px;
+    }
+
+    .catering-intro__mark {
+        width: 43px;
+        height: 43px;
+        flex-basis: 43px;
+    }
+
+    .catering-intro__inner p {
+        font-size: 0.87rem;
+    }
+
+    .catering-offerings {
+        padding: 55px 0;
+    }
+
+    .catering-section-heading {
+        margin-bottom: 26px;
+    }
+
+    .catering-section-heading h2 {
+        font-size: clamp(2rem, 7vw, 2.65rem);
+    }
+
+    .catering-offering-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .catering-card__body {
+        min-height: 125px;
+        padding: 14px 14px 16px;
+    }
+
+    .catering-card h3 {
+        font-size: 1.08rem;
+    }
+
+    .catering-card p {
+        font-size: 0.77rem;
+    }
+
+    .catering-card--wide {
+        grid-column: span 2;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .catering-card--wide > img {
+        min-height: 145px;
+    }
+
+    .catering-card--wide .catering-card__body {
+        padding: 15px;
+    }
+
+    .catering-disclaimer {
+        margin-top: 20px;
+        padding: 12px;
+        font-size: 0.75rem;
+    }
+
+    .catering-bottom {
+        padding: 34px 0;
+    }
+
+    .catering-bottom__inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 19px;
+    }
+}
+
+@media (max-width: 420px) {
+    .catering-page .container {
+        width: 92%;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .catering-breadcrumb {
+        gap: 7px;
+        margin-top: 72px;
+        font-size: 0.7rem;
+    }
+
+    .catering-hero {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .catering-hero h1 {
+        font-size: clamp(2.35rem, 10.3vw, 3rem);
+    }
+
+    .catering-hero__actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .catering-hero__actions .btn {
+        width: 100%;
+    }
+
+    .catering-offering-grid {
+        gap: 10px;
+    }
+
+    .catering-card__body {
+        min-height: 132px;
+        padding: 12px 11px 13px;
+    }
+
+    .catering-card__eyebrow {
+        font-size: 0.58rem;
+    }
+
+    .catering-card h3 {
+        font-size: 1rem;
+    }
+
+    .catering-card p {
+        font-size: 0.72rem;
+    }
+
+    .catering-card--wide {
+        grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .catering-card--wide .catering-card__body {
+        padding: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .catering-page *,
+    .catering-page *::before,
+    .catering-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

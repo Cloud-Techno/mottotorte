@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FAF6F4"/><stop offset="100%" stop-color="#EFE2DC"/></linearGradient>
+    <linearGradient id="chocDark" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4A261D"/><stop offset="100%" stop-color="#28120C"/></linearGradient>
+    <linearGradient id="chocTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#67382B"/><stop offset="100%" stop-color="#3D1D15"/></linearGradient>
+    <linearGradient id="goldDust" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FDE8A5"/><stop offset="100%" stop-color="#D4AF37"/></linearGradient>
+    <filter id="sh2" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#3A1D15" flood-opacity="0.18"/></filter>
+  </defs>
+  <rect width="500" height="360" rx="16" fill="url(#bg2)"/>
+  <ellipse cx="250" cy="300" rx="190" ry="22" fill="#523229" opacity="0.13"/>
+  <rect x="90" y="270" width="320" height="24" rx="8" fill="#F4E8DF" stroke="#DCC7BC" stroke-width="2"/>
+
+  <!-- Brownie Bite 1 (Left) -->
+  <g filter="url(#sh2)" transform="translate(115, 175)">
+    <polygon points="10,40 65,15 110,40 55,65" fill="url(#chocTop)"/>
+    <polygon points="10,40 55,65 55,105 10,80" fill="url(#chocDark)"/>
+    <polygon points="55,65 110,40 110,80 55,105" fill="#361710"/>
+    <path d="M25,35 Q40,30 60,35 Q80,25 95,35" stroke="url(#goldDust)" stroke-width="2" fill="none"/>
+    <circle cx="65" cy="40" r="3" fill="#D4AF37"/>
+  </g>
+
+  <!-- Brownie Bite 2 (Center - Stacked) -->
+  <g filter="url(#sh2)" transform="translate(195, 145)">
+    <!-- Bottom piece -->
+    <polygon points="15,45 75,15 125,45 65,75" fill="url(#chocTop)"/>
+    <polygon points="15,45 65,75 65,120 15,90" fill="url(#chocDark)"/>
+    <polygon points="65,75 125,45 125,90 65,120" fill="#361710"/>
+    
+    <!-- Top piece rotated -->
+    <g transform="translate(15, -45)">
+      <polygon points="10,40 65,15 110,40 55,65" fill="url(#chocTop)"/>
+      <polygon points="10,40 55,65 55,100 10,75" fill="url(#chocDark)"/>
+      <polygon points="55,65 110,40 110,75 55,100" fill="#2E130D"/>
+      <!-- Sea salt & raspberry crumb -->
+      <circle cx="45" cy="35" r="3" fill="#E88282"/>
+      <circle cx="75" cy="32" r="2.5" fill="#FFF"/>
+      <circle cx="60" cy="45" r="2.5" fill="url(#goldDust)"/>
+      <circle cx="85" cy="42" r="3" fill="#E88282"/>
+    </g>
+  </g>
+
+  <!-- Brownie Bite 3 (Right) -->
+  <g filter="url(#sh2)" transform="translate(295, 180)">
+    <polygon points="10,40 65,15 110,40 55,65" fill="url(#chocTop)"/>
+    <polygon points="10,40 55,65 55,100 10,75" fill="url(#chocDark)"/>
+    <polygon points="55,65 110,40 110,75 55,100" fill="#361710"/>
+    <path d="M30,35 Q60,45 90,30" stroke="#FFF" stroke-width="1.8" opacity="0.7" fill="none"/>
+  </g>
+</svg>

@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileBtn) {
         mobileBtn.addEventListener('click', () => {
             nav.classList.toggle('active');
+            mobileBtn.setAttribute('aria-expanded', nav.classList.contains('active') ? 'true' : 'false');
 
             // Toggle icon
             const icon = mobileBtn.querySelector('i');
@@ -103,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             if (nav.classList.contains('active')) {
                 nav.classList.remove('active');
+                mobileBtn.setAttribute('aria-expanded', 'false');
                 const icon = mobileBtn.querySelector('i');
                 if (icon) {
                     icon.classList.remove('fa-xmark');
@@ -120,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!isClickInsideMenu && !isClickOnToggle) {
                 nav.classList.remove('active');
+                mobileBtn.setAttribute('aria-expanded', 'false');
                 const icon = mobileBtn.querySelector('i');
                 if (icon) {
                     icon.classList.remove('fa-xmark');
@@ -147,10 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (nameInput && subjectInput) {
             const originalSubject = subjectInput.value;
+            const subjectPrefix = form.dataset.subjectPrefix || 'Tortenanfrage von:';
             nameInput.addEventListener('input', (e) => {
                 const name = e.target.value.trim();
                 if (name) {
-                    subjectInput.value = `Tortenanfrage von: ${name}`;
+                    subjectInput.value = `${subjectPrefix} ${name}`;
                 } else {
                     subjectInput.value = originalSubject;
                 }
@@ -163,11 +167,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerText;
+            const feedback = form.querySelector('[data-form-feedback]');
             submitBtn.innerText = 'Wird gesendet...';
             submitBtn.disabled = true;
 
             const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
+            const object = {};
+            formData.forEach((value, key) => {
+                if (Object.prototype.hasOwnProperty.call(object, key)) {
+                    object[key] = Array.isArray(object[key]) ? [...object[key], value] : [object[key], value];
+                } else {
+                    object[key] = value;
+                }
+            });
             const json = JSON.stringify(object);
 
             fetch('https://api.web3forms.com/submit', {
@@ -179,20 +191,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: json
             })
                 .then(async (response) => {
-                    let json = await response.json();
-                    if (response.status == 200) {
+                    const result = await response.json();
+                    if (response.ok && result.success) {
                         // Redirect manually on success
                         window.location.href = "thanks.html";
                     } else {
-                        console.log(response);
-                        alert("Senden fehlgeschlagen. Bitte versuche es später erneut.");
-                        submitBtn.innerText = originalBtnText;
-                        submitBtn.disabled = false;
+                        throw new Error(result.message || 'Die Anfrage konnte nicht gesendet werden.');
                     }
                 })
                 .catch(error => {
-                    console.log(error);
-                    alert("Ein Fehler ist aufgetreten. Bitte versuche es später erneut.");
+                    console.error('Contact form submission failed.', error);
+                    const message = "Senden fehlgeschlagen. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns per WhatsApp.";
+                    if (feedback) {
+                        feedback.textContent = message;
+                    } else {
+                        alert(message);
+                    }
                     submitBtn.innerText = originalBtnText;
                     submitBtn.disabled = false;
                 });
