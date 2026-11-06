@@ -610,11 +610,7 @@ header.header {
 
 /* Mock Image Header on Each Product Card */
 .item-mock-visual {
-  position: relative;
-  width: 100%;
-  height: 180px;
-  background-color: #FAF5F2;
-  overflow: hidden;
+  display: none;
 }
 
 .item-mock-visual img {
