@@ -1273,6 +1273,22 @@ a.feature-card {
     margin-bottom: 14px;
 }
 
+.google-review-card-score {
+    color: #B27C7C;
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.google-review-card-score small {
+    color: #8d7b7f;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
 .google-review-stars {
     display: flex;
     align-items: center;

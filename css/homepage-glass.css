@@ -175,23 +175,6 @@
     font-size: 1.3rem;
 }
 
-.google-review-summary-score {
-    color: #B27C7C;
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 1;
-}
-
-.google-review-summary-outof {
-    align-self: flex-end;
-    margin: 0 2px 2px -9px;
-    color: #8d7b7f;
-    font-size: 0.82rem;
-    font-weight: 600;
-}
-
 .google-review-summary-stars {
     display: inline-flex;
     gap: 3px;
@@ -439,10 +422,6 @@
         border-radius: 17px;
     }
 
-    .google-review-summary-score {
-        font-size: 1.8rem;
-    }
-
     .google-review-summary-count {
         padding-left: 9px;
         font-size: 0.8rem;
@@ -527,10 +506,6 @@
 
     .google-review-summary-logo {
         font-size: 1.15rem;
-    }
-
-    .google-review-summary-score {
-        font-size: 1.65rem;
     }
 
     .google-review-summary-count {
