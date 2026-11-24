@@ -77,6 +77,44 @@
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Google reviews carousel
+    const reviewsTrack = document.getElementById('google-reviews-grid');
+    const reviewCards = reviewsTrack ? Array.from(reviewsTrack.children) : [];
+    const reviewButtons = document.querySelectorAll('.google-reviews-carousel-button');
+    const reviewStatus = document.querySelector('.google-reviews-carousel-status');
+
+    if (reviewsTrack && reviewCards.length > 0 && reviewStatus && reviewButtons.length === 2) {
+        let activeReview = 0;
+
+        const updateReviewsCarousel = () => {
+            const trackLeft = reviewsTrack.getBoundingClientRect().left;
+            activeReview = reviewCards.reduce((closestIndex, card, index) => {
+                const currentDistance = Math.abs(reviewCards[closestIndex].getBoundingClientRect().left - trackLeft);
+                const nextDistance = Math.abs(card.getBoundingClientRect().left - trackLeft);
+                return nextDistance < currentDistance ? index : closestIndex;
+            }, 0);
+
+            reviewStatus.textContent = `Bewertung ${activeReview + 1} von ${reviewCards.length}`;
+            reviewButtons[0].disabled = activeReview === 0;
+            reviewButtons[1].disabled = activeReview === reviewCards.length - 1;
+        };
+
+        reviewsTrack.addEventListener('scroll', updateReviewsCarousel, { passive: true });
+        reviewButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const direction = Number(button.dataset.reviewDirection);
+                const nextReview = Math.max(0, Math.min(reviewCards.length - 1, activeReview + direction));
+                const trackLeft = reviewsTrack.getBoundingClientRect().left;
+                const cardLeft = reviewCards[nextReview].getBoundingClientRect().left;
+
+                reviewsTrack.scrollTo({
+                    left: reviewsTrack.scrollLeft + cardLeft - trackLeft,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    }
+
     // Mobile Navigation Toggle
     const mobileBtn = document.querySelector('.mobile-nav-toggle');
     const nav = document.querySelector('.main-nav');
